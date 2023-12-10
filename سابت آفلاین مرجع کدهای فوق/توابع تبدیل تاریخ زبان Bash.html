@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fa"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>توابع تبدیل تاریخ زبان Bash</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+  <meta name="robots" content="index, follow">
+  <meta name="generator" content="JDF.SCR.IR">
+  <meta name="description" content="توابع تبدیل تاریخ زبان Bash">
+  <meta name="keywords" content="Islamic Republic Of Iran,jdf.php,jdate(),تبدیل تاریخ به هجری شمسی پی اچ پی php">
+  <link href="%D8%AA%D9%88%D8%A7%D8%A8%D8%B9%20%D8%AA%D8%A8%D8%AF%DB%8C%D9%84%20%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE%20%D8%B2%D8%A8%D8%A7%D9%86%20Bash_files/all.css" rel="stylesheet" type="text/css">
+  <script language="JavaScript" type="text/javascript" src="%D8%AA%D9%88%D8%A7%D8%A8%D8%B9%20%D8%AA%D8%A8%D8%AF%DB%8C%D9%84%20%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE%20%D8%B2%D8%A8%D8%A7%D9%86%20Bash_files/asli.js"></script><link href="%D8%AA%D9%88%D8%A7%D8%A8%D8%B9%20%D8%AA%D8%A8%D8%AF%DB%8C%D9%84%20%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE%20%D8%B2%D8%A8%D8%A7%D9%86%20Bash_files/monitor.css" rel="stylesheet" type="text/css" media="all"><style><!-- #kalamat_kelidi_makhfi{display:none;} #tablighat{display:block;} --></style>
+  <!--[if IE]>
+  <link href="/css/all_ie.css" rel="stylesheet" type="text/css">
+  <![endif]-->
+  <link href="%D8%AA%D9%88%D8%A7%D8%A8%D8%B9%20%D8%AA%D8%A8%D8%AF%DB%8C%D9%84%20%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE%20%D8%B2%D8%A8%D8%A7%D9%86%20Bash_files/style.css" rel="stylesheet" type="text/css">
+  <link href="%D8%AA%D9%88%D8%A7%D8%A8%D8%B9%20%D8%AA%D8%A8%D8%AF%DB%8C%D9%84%20%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE%20%D8%B2%D8%A8%D8%A7%D9%86%20Bash_files/shams.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <div class="kol" dir="rtl">
+
+    <div class="header dsR90" style="font-family:'b sina';">
+      <!-- <span style="float:left;" class="kore dib tcl"></span> -->
+
+      <span class="s_onv dib" style="color:#22f222;">
+        بسم الله الرّحمن الرّحیم
+        <br><b style="color:#eee;font-size:large;">مبدّل تاریخ و زمان</b><br>
+        <a href="http://jdf.scr.ir/" target="_blank" name="jdf_scr_ir" style="color:#f00;font-size: medium;"><b>jdf.scr.ir</b></a>
+      </span>
+
+      <!-- <span style="float:right;" class="kore dib tcr"></span> -->
+
+    </div>
+
+
+    <div class="aya">
+      <marquee direction="right" scrollamount="2">
+        وَسَخَّرَ لَكُمُ اللَّیْلَ وَالْنَّهَارَ وَالشَّمْسَ وَالْقَمَرَ
+ وَالْنُّجُومُ مُسَخَّرَاتٌ بِأَمْرِهِ إِنَّ فِی ذَلِكَ لَآیَاتٍ 
+لِّقَوْمٍ یَعْقِلُونَ |
+        و شب و روز و خورشید و ماه را برای شما رام گردانید و ستارگان به 
+فرمان او مسخّر شده اند مسلّماً در این [امور] برای مردمی که تعقّل می‏کنند
+ نشانه هاست |
+        سوره ی نحل ، آیه ی 12
+      </marquee>
+    </div>
+
+    <a name="zero_top"></a>
+
+    <div class="zero" style="position: sticky;width: 44px;top:0;float:right;background-color: #0cc6;border-radius: 6px;">
+      <a class="" href="#zero_bot" style="text-align: center;font-size: large;width:100%;padding: 6px;">☰</a>
+    </div>
+    <div class="zero" style="position: sticky;width: 44px;top:0;float:left;background-color: #0c06;border-radius: 6px;">
+      <a class="" href="#zero_top" style="text-align: center;font-size: large;width:100%;padding: 6px;">▲</a>
+    </div>
+
+    <div class="post-text">
+      <div style="margin:10px" dir="rtl">
+
+        <!-- مطالب -->
+
+        <!--<center><img src="/pic/moharam.jpg" style="width:98%;max-width:455px;box-shadow:#000 1pt 1pt 3pt" /></center>-->
+
+
+
+
+
+
+        <style><!--.dsR1{font-size:10pt;font-family:monospace,"courier new";line-height:12pt;background-color:#222;color:#fff0a5;width:99%;border:solid 1px #0a0;}--></style>
+<div align="center"><b><font style="font-family:titr,arial;font-size:16pt;color:#d00;">توابع تبدیل تاریخ هجری شمسی زبان Bash (بَش) Linux</font></b></div>
+<p>دو تابع gregorian_to_jalali و jalali_to_gregorian از توابع بسیار 
+کاربردی برای تبدیل تاریخ از میلادی (گرگوری) به هجری شمسی (جلالی) و برعکس
+ می‌باشند که به چندین زبان برنامه‌نویسی در نشانی <a href="http://jdf.scr.ir/jdf/">http://jdf.scr.ir/jdf</a> ارائه گردیده و به همراه مثال‌های کاربردی در یک فایل فشرده قابل دریافت هستند.
+
+</p><hr>
+
+<p dir="rtl" align="left">
+<b style="font-family:titr,arial;font-size:14pt;color:#a00;">کد زیر به زبان <span style="color:#060;font-size:18pt;font-family:serif;">Bash</span> Linux می‌باشد.
+<a href="#sayer" style="color:#090;">&nbsp; &nbsp; [ سایر زبان‌های برنامه‌نویسی ] &nbsp;</a>
+<a href="https://jdf.scr.ir/download.d/tabdil_dl.php" style="color:#00a;">&nbsp; [ دریافت فایل‌ها+مثال ] &nbsp;</a>
+</b>
+</p>
+
+<textarea class="dsR1" dir="ltr" rows="14" readonly="readonly" style="text-align:left;padding-left:5px;" wrap="off">#
+ Gregorian &amp; Jalali ( Hijri_Shamsi , Solar ) Date Converter  
+Functions
+# Author: JDF.SCR.IR =&gt;&gt; Download Full Version :  
+http://jdf.scr.ir/jdf
+# License: GNU/LGPL _ Open Source &amp; Free :: Version: 2.80 : 
+[2020=1399]
+# ---------------------------------------------------------------------
+# 355746=361590-5844 &amp; 361590=(30*33*365)+(30*8) &amp; 
+5844=(16*365)+(16/4)
+# 355666=355746-79-1 &amp; 355668=355746-79+1 &amp;  1595=605+990 &amp; 
+ 605=621-16
+# 990=30*33 &amp; 12053=(365*33)+(32/4) &amp; 
+36524=(365*100)+(100/4)-(100/100)
+# 1461=(365*4)+(4/4)   &amp;   
+146097=(365*400)+(400/4)-(400/100)+(400/400)
+
+gregorian_to_jalali(){
+    gy=$1; gm=$2; gd=$3
+    g_d_m=(0 31 59 90 120 151 181 212 243 273 304 334)
+    if [ $gm -gt 2 ]; then
+        gy2=$((gy + 1))
+    else
+        gy2=$gy
+    fi
+    days=$((355666 + (365 * gy) + ((gy2 + 3) / 4) - ((gy2 + 99) / 100) +
+ ((gy2 + 399) / 400) + gd + g_d_m[gm - 1]))
+    jy=$((-1595 + (33 * (days / 12053))))
+    days=$((days % 12053))
+    jy=$((jy + (4 * (days / 1461))))
+    days=$((days % 1461))
+    if [ $days -gt 365 ]; then
+        jy=$((jy + ((days - 1) / 365)))
+        days=$(((days - 1) % 365))
+    fi
+    if [ $days -lt 186 ]; then
+        jm=$((1 + (days / 31)))
+        jd=$((1 + (days % 31)))
+    else
+        jm=$((7 + ((days - 186) / 30)))
+        jd=$((1 + ((days - 186) % 30)))
+    fi
+    jalali=($jy $jm $jd)
+}
+
+jalali_to_gregorian() {
+    jy=$1; jm=$2; jd=$3
+    jy=$((jy + 1595))
+    days=$((-355668 + (365 * jy) + ((jy / 33) * 8) + (((jy % 33) + 3) / 
+4) + jd + ((jm &lt; 7) ? (jm - 1) * 31 : ((jm - 7) * 30) + 186)))
+    gy=$((400 * (days / 146097)))
+    days=$((days % 146097))
+    if [ $days -gt 36524 ]; then
+        ((days--))
+        gy=$((gy + (100 * (days / 36524))))
+        days=$((days % 36524))
+        if [ $days -ge 365 ]; then
+            ((days++))
+        fi
+    fi
+    gy=$((gy + (4 * (days / 1461))))
+    days=$((days % 1461))
+    if [ $days -gt 365 ]; then
+        gy=$((gy + ((days - 1) / 365)))
+        days=$(((days - 1) % 365))
+    fi
+    gd=$((days + 1))
+    if [[ ( ($((gy % 4)) = 0) &amp;&amp; ($((gy % 100)) != 0) ) || ( 
+$((gy % 400)) = 0 ) ]]; then
+        kab_m2=29
+    else
+        kab_m2=28
+    fi
+    sal_a=(0 31 $kab_m2 31 30 31 30 31 31 30 31 30 31)
+    gm=0
+    while [[ ($gm -lt 13) &amp;&amp; ($gd -gt $((sal_a[gm])))]]
+    do
+        gd=$((gd - sal_a[gm]))
+        ((gm++))
+    done
+    gregorian=($gy $gm $gd)
+}
+
+</textarea>
+
+<p dir="rtl" align="left">
+<b style="font-family:titr,arial;font-size:14pt;">
+<a href="http://scr.ir/pardakht/?hemayat=jdf" target="_blank" style="color:#e30;">&nbsp; [ حمایت مالی داوطلبانه ] &nbsp;</a>
+<a href="https://jdf.scr.ir/download/" target="_blank" style="color:#530;">&nbsp; [ دریافت سایر پروژه‌های مرکز ] &nbsp;</a>
+<a href="https://jdf.scr.ir/download.d/tabdil_dl.php" style="color:#00a;">&nbsp; [ دریافت فایل‌ها+مثال ] &nbsp;</a>
+</b>
+</p>
+
+<hr>
+
+<p align="center"><b>راهنمای تابع gregorian_to_jalali</b> (Bash) </p>
+<p>دارای 3 ورودی است و وظیفه ی اصلی آن ، تبدیل تاریخ میلادی به هجری شمسی
+ می باشد. هر 3 ورودی آن اجباری بوده و حتماً باید وارد شوند. تاریخی که به
+ این تابع وارد می کنیم ، حتماً باید میلادی باشد تا در خروجی به هجری شمسی
+ تبدیل گردد. خروجی این تابع به صورت ایجاد یک متغیّر با نام jalali است.
+برای آشنایی بیشتر، مثال‌های درون فایل دریافتی را بررسی نمایید.
+</p><p dir="ltr" align="left">
+<i>gregorian_to_jalali $gYear $gMonth $gDay</i><br>
+<code style="color:#c0f;font-size:16px">echo ${jalali[0]}/${jalali[1]}/${jalali[2]}</code></p>
+<p><b>ورودی‌های تابع gregorian_to_jalali</b><a href="http://jdf.scr.ir/jdf/">&nbsp;</a></p>
+<p><b><font color="#cc0000">gy</font></b> : ورودی اوّل ، سال میلادی ( کامل 4 رقمی ) <br><b>
+<font color="#cc0000">gm</font></b> : ورودی دوم ، ماه میلادی ( 12- 1 )<br>
+<b><font color="#cc0000">gd</font></b> : ورودی سوم ، روز 
+
+میلادی ( 31 - 1 )</p>
+<p style="color:#c00;">توجّه: صفر بی ارزش قبل از اعداد ورودی را حذف کنید: مثلاً 02 را به 2 تبدیل نموده (عدد صحیح)، سپس به آرگومان ها وارد نمایید.</p>
+
+<p>مثال عملی در فایل مربوطه موجود می باشد. می توانید دانلود نمایید.</p>
+
+<hr>
+
+
+<p align="center"><b>راهنمای تابع jalali_to_gregorian</b> (Bash) </p>
+<p>دارای 3 ورودی است و وظیفه ی اصلی آن ، تبدیل تاریخ هجری شمسی به میلادی
+ می باشد. هر 3 ورودی آن اجباری بوده و حتماً باید وارد شوند. تاریخی که به
+ این تابع وارد می کنیم ، حتماً باید هجری شمسی باشد تا در خروجی به میلادی
+ تبدیل گردد. خروجی این تابع به صورت ایجاد یک متغیّر با نام gregorian 
+است.
+برای آشنایی بیشتر، مثال‌های درون فایل دریافتی را بررسی نمایید.
+</p><p dir="ltr" align="left">
+<i>jalali_to_gregorian $jYear $jMonth $jDay</i><br>
+<code style="color:#c0f;font-size:16px">echo ${gregorian[0]}/${gregorian[1]}/${gregorian[2]}</code></p>
+<p><b>ورودی‌های تابع jalali_to_gregorian</b><a href="http://jdf.scr.ir/jdf/">&nbsp;</a></p>
+<p><b><font color="#cc0000">jy</font></b> : ورودی اوّل ، سال هجری شمسی ( کامل 4 رقمی ) <br><b><font color="#cc0000">jm</font></b> : ورودی دوم ، ماه هجری شمسی ( 12- 1 )<br>
+<b><font color="#cc0000">jd</font></b> : ورودی سوم ، 
+
+روز هجری شمسی ( 31 - 1 )</p>
+
+<p style="color:#c00;">توجّه: صفر بی ارزش قبل از اعداد ورودی را حذف کنید: مثلاً 02 را به 2 تبدیل نموده (عدد صحیح)، سپس به آرگومان ها وارد نمایید.</p>
+
+<p>مثال عملی در فایل مربوطه موجود می باشد. می توانید دانلود نمایید.</p>
+
+* * *
+
+<!-- jdf.scr.ir -->
+
+<br><br>
+
+<style><!--
+.zk2{width:110px;margin:5px;direction:ltr;}
+.zk2:hover{font-weight:normal;}
+--></style>
+<center>
+
+<div style="background-color: #e5e5e5;font-size:12pt;100%;" dir="rtl" class="dib" align="center">
+<hr><a name="sayer">&nbsp;<!-- سایر زبان ها _ لنگرگاه --></a>
+
+<b style="color:#080;font-family:titr,arial,nazli;font-size:16pt;">توابع تبدیل تاریخ میلادی به هجری شمسی و برعکس</b>
+<br><br>
+<b style="color:#a00;font-family:titr,arial,nazli;">( به زبان‌های برنامه‌نویسی زیر )</b>
+
+<hr>
+<a href="https://jdf.scr.ir/jdf/c" class="dib kelid btn zk2">C</a>
+<a href="https://jdf.scr.ir/jdf/cpp" class="dib kelid btn zk2">C++</a>
+<a href="https://jdf.scr.ir/jdf/c_sharp" class="dib kelid btn zk2">C#</a>
+<a href="https://jdf.scr.ir/jdf/java" class="dib kelid btn zk2">Java</a>
+<a href="https://jdf.scr.ir/jdf/kotlin" class="dib kelid btn zk2">Kotlin</a>
+<a href="https://jdf.scr.ir/jdf/python" class="dib kelid btn zk2">Python</a>
+<a href="https://jdf.scr.ir/jdf/dart" class="dib kelid btn zk2">Dart</a>
+<a href="https://jdf.scr.ir/jdf/java_script" class="dib kelid btn zk2">JavaScript</a>
+<a href="https://jdf.scr.ir/jdf/php" class="dib kelid btn zk2">PHP</a>
+<a href="https://jdf.scr.ir/jdf/perl" class="dib kelid btn zk2">Perl</a>
+<a href="https://jdf.scr.ir/jdf/go" class="dib kelid btn zk2">Go</a>
+<a href="https://jdf.scr.ir/jdf/swift" class="dib kelid btn zk2">Swift</a>
+<a href="https://jdf.scr.ir/jdf/objective_c" class="dib kelid btn zk2">Objective_C</a>
+<a href="https://jdf.scr.ir/jdf/r" class="dib kelid btn zk2">R</a>
+<a href="https://jdf.scr.ir/jdf/pascal" class="dib kelid btn zk2">Pascal</a>
+<a href="https://jdf.scr.ir/jdf/visual_basic" class="dib kelid btn zk2">VisualBasic</a>
+<a href="https://jdf.scr.ir/jdf/ruby" class="dib kelid btn zk2">Ruby</a>
+<a href="https://jdf.scr.ir/jdf/bash" class="dib kelid btn zk2">Bash</a>
+<a href="https://jdf.scr.ir/download/" target="_blank" class="dib kelid btn zk2">[Download]</a>
+<hr>
+آیا می‌دانید حمایت مالی داوطلبانه از برنامه‌نویسان باعث افزایش انگیزه‌ی آنان جهت توسعه‌ی نرم‌افزارهای <b style="color:#080;">رایگان</b> می‌گردد؟
+<br><a href="http://scr.ir/pardakht/?hemayat=jdf" class="dib kelid btn" target="_blank" style="color:#000;width:250px;margin:5px;">حمایت مالی داوطلبانه</a>
+<br><br>
+
+نشانی کانال ما: 
+<a href="https://sapp.ir/jdf.scr.ir" target="_blank" style="color:#005E6F;font-family:sans-serif,Arial" class="kelid_tak_titr">https://sapp.ir/jdf.scr.ir <img src="%D8%AA%D9%88%D8%A7%D8%A8%D8%B9%20%D8%AA%D8%A8%D8%AF%DB%8C%D9%84%20%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE%20%D8%B2%D8%A8%D8%A7%D9%86%20Bash_files/soroush.png" style="width:15px;" alt="سروش"></a>
+
+
+<hr>
+</div>
+
+<center><br><p style="text-align:right">نشانی کوتاه این صفحه: <input type="text" value="https://jdf.scr.ir/p/37" readonly="readonly" style="direction:ltr;min-width:200px" onfocus="this.select();document.execCommand('copy');"></p>
+
+
+
+
+
+        <!-- مطالب -->
+
+
+<!-- <center><div id="tablighat">
+<p style="font-size: large; background-color: #005312;padding:12px;border-radius: 12%;color:#fff;box-shadow:#000 1pt 1pt 1pt;">این 👇 یک تبلیغ <span style="color:#ff6">نیست</span>. پیشنهاد شخصی ماست!</p>
+<img src="/pic/test.jpg" style="width:98%;max-width:634px;box-shadow:#000 1pt 1pt 3pt;" />
+<p style="font-size: large; background-color: #530000;padding:12px;border-radius: 12%;color:#fff;box-shadow:#000 1pt 1pt 1pt;">این 👆 یک تبلیغ <span style="color:#ff6">نیست</span>. پیشنهاد شخصی ماست!</p>
+</div></center> -->
+
+        <a name="zero_bot"><br></a>
+      </center></center></div>
+    </div>
+
+
+    <div class="sidebar">
+      <div class="sidebar1">
+        <!--[if IE]>
+<span class="btn dib" style="color:#a00;background-image:none;font-weight:bold;">
+توجّه: آیا می دانید مرورگر Internet Explorer از نسخه های جدید و پیشرفته ی وب پشتیبانی نمی کند.
+<br>جهت مشاهده ی بهتر صفحات وب استاندارد ، از مرورگر دیگری مثل Mozilla Firefox استفاده نمایید.
+</span>
+<![endif]-->
+        <a href="https://jdf.scr.ir/jdf" class="btn dib">→ تاریخ هـ.شمسی در برنامه‌نویسی</a><span class="" style="display:block;text-align:center;font-size:16pt;width:100%;color:#161;background-color:#fff6;-min-height:3em;padding: 1em 0 0.33em 0">⇩ سایر مطالب</span><a class="btn dib" style="color:#fff;background-color:#1a86c3">توابع تبدیل تاریخ زبان Bash</a><a href="https://jdf.scr.ir/jdf/c" class="btn dib">توابع تبدیل تاریخ زبان C</a><a href="https://jdf.scr.ir/jdf/cpp" class="btn dib">توابع تبدیل تاریخ زبان ++C</a><a href="https://jdf.scr.ir/jdf/c_sharp" class="btn dib">توابع تبدیل تاریخ زبان #C</a><a href="https://jdf.scr.ir/jdf/dart" class="btn dib">توابع تبدیل تاریخ زبان Dart</a><a href="https://jdf.scr.ir/jdf/go" class="btn dib">توابع تبدیل تاریخ زبان Go</a><a href="https://jdf.scr.ir/jdf/java" class="btn dib">توابع تبدیل تاریخ زبان Java</a><a href="https://jdf.scr.ir/jdf/java_script" class="btn dib">توابع تبدیل تاریخ زبان javaScript</a><a href="https://jdf.scr.ir/jdf/kotlin" class="btn dib">توابع تبدیل تاریخ زبان kotlin</a><a href="https://jdf.scr.ir/jdf/objective_c" class="btn dib">توابع تبدیل تاریخ زبان Objective_C</a><a href="https://jdf.scr.ir/jdf/pascal" class="btn dib">توابع تبدیل تاریخ زبان Pascal</a><a href="https://jdf.scr.ir/jdf/perl" class="btn dib">توابع تبدیل تاریخ زبان Perl</a><a href="https://jdf.scr.ir/jdf/php" class="btn dib">توابع تبدیل تاریخ زبان php</a><a href="https://jdf.scr.ir/jdf/python" class="btn dib">توابع تبدیل تاریخ زبان Python</a><a href="https://jdf.scr.ir/jdf/r" class="btn dib">توابع تبدیل تاریخ زبان R</a><a href="https://jdf.scr.ir/jdf/ruby" class="btn dib">توابع تبدیل تاریخ زبان Ruby</a><a href="https://jdf.scr.ir/jdf/swift" class="btn dib">توابع تبدیل تاریخ زبان Swift</a><a href="https://jdf.scr.ir/jdf/visual_basic" class="btn dib">توابع تبدیل تاریخ زبان Visual Basic</a>      </div>
+
+      <div class="sidebar2">
+        <a href="https://jdf.scr.ir/" class="btn dib">صفحه‌ی نخست سایت</a>      </div>
+    </div>
+    <div class="footer dsR90"><a href="#jdf_scr_ir" style="color:#fff">Copyright © 2023/1402 , jdf.scr.ir </a></div>
+
+  </div>
+
+
+
+</body></html>
